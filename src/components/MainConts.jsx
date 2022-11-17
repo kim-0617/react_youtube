@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Category, Videos } from './index';
 import fetchAPI from '../utils/fetchAPI';
+import dummy from '../utils/dummy.json';
 
 const MainConts = () => {
-  const [selectCategory, setSelectCategory] = useState('');
-  const [videos, setVideos] = useState(null);
-
+  const [selectCategory, setSelectCategory] = useState('webstoryboy');
+  const [videos, setVideos] = useState(dummy.items);
   useEffect(() => {
-    fetchAPI(`search?part=snippet&q=webstoryboy`)
+    fetchAPI(`search?part=snippet&q=${selectCategory}`)
       .then((data) => {
         setVideos(data.items);
       })
       .catch((err) => {
         console.dir(err);
       });
-  }, []);
+  }, [selectCategory]);
 
   return (
     <main id="main">

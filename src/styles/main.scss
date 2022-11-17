@@ -26,6 +26,10 @@
       &:hover {
         background-color: rgb(241, 121, 221);
       }
+
+      &.active {
+        background-color: rgb(241, 121, 221);
+      }
     }
   }
 
@@ -48,15 +52,269 @@
   display: flex;
   flex-wrap: wrap;
 
-  > div {
+  .first {
+    width: 100% !important;
+    text-align: center;
+
+    .title {
+      margin-top: 10px;
+      display: inline-block;
+    }
+    img {
+      margin: 0 auto !important;
+      width: 20% !important;
+    }
+  }
+
+  > .box {
     width: 23.5%;
     margin-right: 2%;
-    margin-bottom: 2%;
-    height: 300px;
-    background-color: #fff;
+    margin-bottom: 70px;
+    border-radius: 10px;
+    transition: all 300ms;
 
-    &:nth-child(4n) {
+    img {
+      width: 100%;
+      display: block;
+      margin-bottom: 15px;
+      border-radius: 10px;
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      display: inline-block;
+      width: 100%;
+      padding: 5px 5px 8px 5px;
+    }
+
+    &:nth-child(4n + 1) {
       margin-right: 0;
     }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+@media (max-width: 1220px) {
+  #main {
+    #aside {
+      padding-top: 25px;
+      button {
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+          &:first-child {
+            margin-right: 10px;
+            margin-top: 3px;
+          }
+        }
+
+        .cName {
+          width: 90%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  .videos__inner {
+    .first {
+      img {
+        margin: 0 auto !important;
+        width: 30% !important;
+      }
+    }
+
+    > .box {
+      width: 32%;
+
+      &:nth-child(3n + 1) {
+        margin-right: 0;
+      }
+      &:nth-child(4n + 1) {
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 998px) {
+  #main {
+    #contents {
+      h2 {
+        margin-top: 70px;
+        margin-bottom: 50px;
+      }
+    }
+
+    #aside {
+      margin-top: 82px;
+    }
+  }
+
+  .videoConts {
+    margin-top: 220px !important;
+  }
+}
+
+@media (max-width: 800px) {
+  #main {
+    #aside {
+      button {
+        .cIcon {
+          margin: 0 auto !important;
+        }
+
+        .cName {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .videos__inner {
+    .first {
+      img {
+        margin: 0 auto !important;
+        width: 40% !important;
+      }
+    }
+    > .box {
+      width: 4%;
+
+      &:nth-child(2n + 1) {
+        margin-right: 0;
+      }
+      &:nth-child(3n + 1) {
+        margin-right: auto;
+      }
+      &:nth-child(4n + 1) {
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  #main {
+    #aside {
+      button {
+        padding: 14px 15px 8px 15px;
+      }
+    }
+  }
+
+  .videos__inner {
+    .first {
+      img {
+        margin: 0 auto !important;
+        width: 40% !important;
+      }
+    }
+    > .box {
+      width: 49%;
+
+      &:nth-child(2n + 1) {
+        margin-right: 0;
+      }
+      &:nth-child(3n + 1) {
+        margin-right: auto;
+      }
+      &:nth-child(4n + 1) {
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 486px) {
+  #main {
+    #contents {
+      h2 {
+        margin-top: 70px;
+        margin-bottom: 50px;
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+  }
+
+  #main {
+    #aside {
+      button {
+        padding: 12px 5px 8px 5px;
+      }
+    }
+  }
+
+  .videos__inner {
+    .first {
+      img {
+        margin: 0 auto !important;
+        width: 60% !important;
+      }
+    }
+    > .box {
+      width: 96%;
+
+      &:nth-child(2n + 1) {
+        margin-right: auto;
+      }
+      &:nth-child(3n + 1) {
+        margin-right: auto;
+      }
+      &:nth-child(4n + 1) {
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+.videoConts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+
+  .left {
+    width: 73%;
+
+    .play {
+      position: relative;
+      width: 96%;
+      margin: 0 auto;
+      margin-bottom: 5%;
+      padding-bottom: 27.65%;
+      border: 5px solid #fff;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
+
+    .desc {
+      width: 96%;
+      margin: 0 auto;
+      height: 18%;
+      background-color: green;
+    }
+  }
+
+  .right {
+    width: 23%;
+    height: 1000px;
+    background-color: blue;
   }
 }
