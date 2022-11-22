@@ -19,5 +19,9 @@ npm i sass
 
 ## react icons
 
-https://react-icons.github.io/react-icons/
+https://react-icons.github.io/react-icons/  
 npm install react-icons --save
+
+## site
+
+https://devyoutube.netlify.app/
