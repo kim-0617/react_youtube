@@ -26,6 +26,7 @@ const Category = ({ selectCategory, setSelectCategory }) => {
             // }}
             key={category.name}
             onClick={onClickBtn}
+            className={selectCategory === category.name ? 'active' : ''}
           >
             <span className="cIcon">{category.icon}</span>
             <span className="cName">{category.name}</span>

@@ -4,7 +4,7 @@ import fetchAPI from '../utils/fetchAPI';
 import dummy from '../utils/dummy.json';
 
 const MainConts = () => {
-  const [selectCategory, setSelectCategory] = useState('webstoryboy');
+  const [selectCategory, setSelectCategory] = useState('웹스토리보이');
   const [videos, setVideos] = useState(dummy.items);
   useEffect(() => {
     fetchAPI(`search?part=snippet&q=${selectCategory}`)
