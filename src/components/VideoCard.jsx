@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Loader from './Loader';
 
-const VideoCard = ({ video, index, layout, channel }) => {
+const VideoCard = ({ video, index, layout, channel, search }) => {
   if (video?.length === 0 || !video.snippet.thumbnails.medium.url) return <Loader />;
 
   if (video.id.kind.includes('playlist')) return null;
-  if (index === 0 && !layout && !channel) {
+  if (index === 0 && !layout && !channel && !search) {
     return (
       <div className="box first">
         <Link to={`/channel/${video.snippet.channelId}`}>
@@ -17,9 +17,10 @@ const VideoCard = ({ video, index, layout, channel }) => {
         </Link>
       </div>
     );
-  } else {
+  } else if (video.id.kind === 'youtube#channel') return null;
+  else {
     return (
-      <div className={`box ${channel ? 'channel' : ''}`}>
+      <div className={`box ${channel ? 'channel' : ''} ${search ? 'search' : ''}`}>
         {layout ? (
           <>
             <Link to={`/video/${video.id.videoId}`}>

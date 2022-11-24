@@ -20,7 +20,6 @@ const ChannelConts = () => {
   }, [id]);
 
   if (!channelDetail?.snippet) return <Loader />;
-  console.log(channelDetail);
 
   return (
     <section id="channelConts">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { MainConts, VideoConts, ChannelConts, SearchConts, HeaderCont } from './components';
+import { MainConts, VideoConts, ChannelConts, SearchConts, HeaderCont, Loader } from './components';
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         <Route path="/video/:id" element={<VideoConts />}></Route>
         <Route path="/channel/:id" element={<ChannelConts />}></Route>
         <Route path="/search/:searchKeyword" element={<SearchConts />}></Route>
+        <Route path="/loading" element={<Loader />}></Route>
       </Routes>
     </BrowserRouter>
   );
